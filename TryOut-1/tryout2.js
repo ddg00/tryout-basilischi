@@ -3,12 +3,12 @@ if (process.argv.length < 3) {
   process.exit(1);
 }
 
-const http = require('http');
+const https = require('https');
 const url = process.argv[2] ;
 const options = {method: 'HEAD', host: url};
 const regex = /(<\s*title[^>]*>(.+?)<\s*\/\s*title)>/gi;
 
-http.get(url, function (res) {
+https.get(url, function (res) {
   contentType = ""+res.headers['content-type'];
   if(contentType.includes("text/html")){
     console.log("The result is HTML");
