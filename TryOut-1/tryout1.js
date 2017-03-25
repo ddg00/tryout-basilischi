@@ -4,7 +4,7 @@ if (process.argv.length < 3) {
 }
 // get file using fs and initiate filename by get file name from commandline
 const fs = require('fs')
-  , filename = process.argv[2];
+const filename = process.argv[2];
 
 fs.readFile(filename, 'utf8', function(err, data) {
   //throw err
@@ -35,7 +35,7 @@ fs.readFile(filename, 'utf8', function(err, data) {
 
   }, {} );
 
-  //sum numbers 
+  //sum numbers
   let totalNumbers = numbers.reduce(function (a, b) {
       return a + b;
   }, 0);
